@@ -1,0 +1,14 @@
+<div ng-controller="QuestionController">
+    <div class="narrow quiz-question" ng-repeat="question in QuestionController">
+        <h3>{{questions.number}} {{questions.text}}</h3>
+        <div class="question-options">
+            <div class="wrap-radio" ng-repeat="answers in question.answers">
+                <input id="q{{question.number}}-a1" type="radio" class="radio-button q{{question.number}} radiobutton" name="q{{question.number}}-option">
+                <label for="q{{question.number}}-a1">{{answers}} </label>
+            </div>        
+        </div>
+        <p class="button-wrap">
+            <a class="button disabled-button quiz-button quiz-button-check" href="javascript:void(0);">Check</a>
+        </p>   
+    </div>
+</div>

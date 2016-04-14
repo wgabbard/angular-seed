@@ -1,12 +1,13 @@
-'use strict';
 
+'use strict';
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
-  'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
-]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
-}]);
+angular.module('myApp', ['ngRoute', 'quizQuestions'])
+.config(function($routeProvider) {
+  	$routeProvider.when('/start', { templateUrl: 'partials/start.html' });
+	$routeProvider.when('/quiz', { templateUrl: 'partials/questions.html' });
+	$routeProvider.when('/finish', { templateUrl: 'partials/finish.html' });
+	$routeProvider.otherwise({ redirectTo: '/quiz' });
+});
+
+angular.module('quizQuestions', []);
+
